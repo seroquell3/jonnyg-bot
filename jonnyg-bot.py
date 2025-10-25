@@ -4,17 +4,17 @@ import time
 import os
 import random
 
-trigger_word = ['Jonny', 'Jonathan', "Jon"]
+# trigger_word = ['Jonny', 'Jonathan', "Jon"]
+
 comment_reply = [
                 'Im not a vegetable', 'I will not control myself', 'idk but Thom is getting facefucked', 
                 'I love when Thom doesnt wash for a few days', '*tries to play idioteque faster*', 'we are a testosterone free band',
                 'I love Penderecki', '/uj Thom is my wife', 'Thom feet', '*touches Thom under his pants*', "Im saggitarius",
                 "Im pampered like you wouldnt believe", 'Makes me wanna go cottaging', "I hear that A LOT", "Slower Thom",
-                "Sex", "Thom said I was supposed to play faster, and I did play faster, but it wasnt enough! IT WASNT ENOUGH FOR THOM!!!",
-                'Israel'
+                "Sex", "Thom said I was supposed to play faster, and I did play faster, but it wasnt enough! IT WASNT ENOUGH FOR THOM!!!"
                 ]
 
-thom_reply = ['Hi, my beloved tomcat', '', "Thom Thom, wanna go cottaging?", 'Slower Thom', 'I told you im not a vegetable :(', 'Touches Thom where sun doesnnt shine']
+thom_reply = ['Hi, my beloved tomcat', '', "Hey, Thom Thom", 'Slower Thom', 'I told you im not a vegetable :(']
 
 def bot_login():
     print("logging in...")
