@@ -1,0 +1,5 @@
+username = "JonnyGreenwod-bot"
+password = "Arhiseva007"
+client_id = "AIpFYAaR4uVd__hyuDNsNw"
+client_secret = "p0XuEDvxOKLLONGO7TxpPUTygfqpQA"
+user_agent = "jonnyg v1"
