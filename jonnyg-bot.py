@@ -1,34 +1,19 @@
 import praw
-import config 
 import time
 import os
 import random
-
-# trigger_word = ['Jonny', 'Jonathan', "Jon"]
-
-comment_reply = [
-                'Im not a vegetable', 'I will not control myself', 'idk but Thom is getting facefucked', 
-                'I love when Thom doesnt wash for a few days', '*tries to play idioteque faster*', 'we are a testosterone free band',
-                'I love Penderecki', '/uj Thom is my wife', 'Thom feet', '*touches Thom under his pants*', "Im saggitarius",
-                "Im pampered like you wouldnt believe", 'Makes me wanna go cottaging', "I hear that A LOT", "Slower Thom",
-                "Sex", "Thom said I was supposed to play faster, and I did play faster, but it wasnt enough! IT WASNT ENOUGH FOR THOM!!!"
-                ]
-
-thom_reply = ['Hi, my beloved tomcat', '', "Hey, Thom Thom", 'Slower Thom', 'I told you im not a vegetable :(']
+from comment_reply import comment_reply
+from comment_reply import thombot_reply
 
 def bot_login():
     print("logging in...")
-    r= praw.Reddit(username = config.username, 
-           password = config.password,
-           client_id = config.client_id,
-           client_secret = config.client_secret,
-           user_agent = config.user_agent)
+    r= praw.Reddit('JonnyGreenwod-bot')
     print("logged in")
     return r
 
 def run_bot(r, comments_replied_to):
     # D  E B U G print ("obtaining comments")
-trigger_word = ['Jonny', 'Jonathan', "Jon",'jon','jonny','jahnee','Greenwood','greenwod','greenwood']
+    trigger_word = ['Jonny', 'Jonathan', "Jon",'jon','jonny','jahnee','Greenwood','greenwod','greenwood']
     # tests = [trigger in comment.body for trigger in trigger_word]
 
     for comment in r.subreddit('radioheadcirclejerk').comments(limit=25):
@@ -94,12 +79,19 @@ trigger_word = ['Jonny', 'Jonathan', "Jon",'jon','jonny','jahnee','Greenwood','g
 
         #     comments_replied_to.append(comment.id)
 
-            with open('comments_replied_to.txt', 'a') as f:
-                f.write(comment.id + '\n')
+            #with open('comments_replied_to.txt', 'a') as f:
+             #   f.write(comment.id + '\n')
 
-        #if comment.author == r.user() and comment.author != r.user.me():
-            #print('Thombot detected')
-            #comment.reply(random.choice(thom_reply))
+        # if comment.author == 'thom-yorke-bot' and comment.author != r.user.me():
+        #     print('Thombot detected')
+        #     comment.reply(random.choice(thombot_reply))
+
+        #     print("replied to thombot comment " + comment.id)
+        #     comments_replied_to.append(comment.id)
+
+        #     with open('comments_replied_to.txt', 'a') as f:
+        #         f.write(comment.id + '\n')
+
 
     # D E B U G print('sleep')
     time.sleep(60) 
@@ -124,4 +116,3 @@ print (comments_replied_to)
 
 while True:
     run_bot(r, comments_replied_to)
-
